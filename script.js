@@ -33,13 +33,33 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-function game(){
-    for(i=0;i<5;i++) {
-        let playerSelection = prompt("Rock, Paper, Scissors?");
-        let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-        console.log(`The current score is:\nPlayer: ${playerScore}\tComputer: ${computerScore}`)
+function test(e){
+
+    let playerSelection = e.path[1].id;
+    let computerSelection = computerPlay();
+    console.log(e.path[1].id);
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(`The current score is:\nPlayer: ${playerScore}\tComputer: ${computerScore}`);
+    playerS.innerHTML = playerScore;
+    computerS.innerHTML = computerScore;
+    if (playerScore === 5 || computerScore=== 5){
+        if (playerScore === 5){
+            gameW.textContent = "You did it! Luck was on your side!";
+            console.log("You did it! Luck was on your side!");
+        }
+        else if (computerScore===5){
+            gameW.textContent = "You lost! Luck was not on your side";
+            console.log("You lost! Luck was not on your side");
+        }
+        playerScore = 0;
+        computerScore = 0;
     }
 }
-
-game();
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+const countGame = document.querySelectorAll("button");
+const playerS = document.querySelector("#player-count");
+const computerS = document.querySelector("#computer-count");
+const gameW = document.querySelector("#game-win");
+countGame.forEach(countGame => countGame.addEventListener('click', test))

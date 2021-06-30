@@ -5,9 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors!</title>
-    <script src = "script.js"></script>
+    <link rel="icon" href="./pics/game-icon.jpg">
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    
+    <h1>Rock, Paper, Scissors!</h1>
+    <hr />
+
+    <section>
+        <div class="player-card">
+            <h2 style="color: blue">Player</h2>
+            <span><img src="./pics/player.png" alt="Player"></span>
+            <span class="count" id="player-count">0</span>
+        </div>
+        <div class="player-card">
+            <h2 style="color: orange">Computer</h2>
+            <span><img src="./pics/computer.png" alt="Player"></span>
+            <span class="count" id="computer-count">0</span>
+        </div>
+
+    </section>
+    <h2 style="color:crimson" id="game-win">Heaven or Hell? Let's Rock!!!</h2>
+
+    <div class="game-buttons"> 
+        <button type="button" id="rock">
+            <p>Rock</p>
+            <img src="./pics/rock.png" alt="Rock">
+        </button>
+        <button type="button" id="paper">
+            <p>Paper</p>
+            <img src="./pics/paper.png" alt="Paper">
+        </button>
+        <button type="button" id="scissors">
+            <p>Scissors</p>
+            <img src="./pics/scissors.png" alt="Scissors">
+        </button>
+    </div>
+
 </body>
+<script src = "script.js"></script>
 </html>
